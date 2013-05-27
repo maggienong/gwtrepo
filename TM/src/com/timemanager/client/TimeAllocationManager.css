@@ -365,3 +365,151 @@ h1 {
   margin: 30px;
 }
  
+.gwt-DialogBox-ClosePanel .Caption {
+  background: #d0e4f6;
+  padding: 4px 4px 4px 8px;
+  cursor: default;
+  border-bottom: 1px solid #bbbbbb;
+  border-top: 18px solid #d0e4f6;
+}
+ 
+.gwt-DialogBox-ClosePanel .dialogContent {
+}
+.gwt-DialogBox-ClosePanel .dialogMiddleCenter {
+  padding: 3px;
+  background: white;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomCenter {
+  background: url(images/standard//hborder.png) repeat-x 0px -4px;
+  -background: url(images/standard/hborder_ie6.png) repeat-x 0px -4px;
+}
+.gwt-DialogBox-ClosePanel .dialogMiddleLeft {
+  background: url(images/standard/vborder.png) repeat-y;
+}
+.gwt-DialogBox-ClosePanel .dialogMiddleRight {
+  background: url(images/standard/vborder.png) repeat-y -4px 0px;
+  -background: url(images/standard/vborder_ie6.png) repeat-y -4px 0px;
+}
+.gwt-DialogBox-ClosePanel .dialogTopLeftInner {
+  width: 5px;
+  zoom: 1;
+}
+.gwt-DialogBox-ClosePanel .dialogTopRightInner {
+  width: 8px;
+  zoom: 1;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomRightInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+.gwt-DialogBox-ClosePanel .dialogTopLeft {
+  background: url(images/standard/corner.png) no-repeat -13px 0px;
+  -background: url(images/standard/corner_ie6.png) no-repeat -13px 0px;
+}
+.gwt-DialogBox-ClosePanel .dialogTopRight {
+  background: url(images/standard/corner.png) no-repeat -18px 0px;
+  -background: url(images/standard/corner_ie6.png) no-repeat -18px 0px;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomLeft {
+  background: url(images/standard/corner.png) no-repeat 0px -15px;
+  -background: url(images/standard/corner_ie6.png) no-repeat 0px -15px;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomRight {
+  background: url(images/standard/corner.png) no-repeat -5px -15px;
+  -background: url(images/standard/corner_ie6.png) no-repeat -5px -15px;
+}
+* html .gwt-DialogBox-ClosePanel .dialogTopLeftInner {
+  width: 5px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox-ClosePanel .dialogTopRightInner {
+  width: 8px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox-ClosePanel .dialogBottomRightInner {
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+.gwt-ClosePanel-ForSell .Caption {
+  background: #CC0000;
+  padding: 4px 4px 4px 8px;
+  cursor: default;
+  border-bottom: 1px solid #bbbbbb;
+  border-top: 18px solid #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogContent {
+}
+.gwt-ClosePanel-ForSell .dialogMiddleCenter {
+  padding: 3px;
+  background: white;
+}
+.gwt-ClosePanel-ForSell .dialogBottomCenter {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogMiddleLeft {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogMiddleRight {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogTopLeftInner {
+  width: 5px;
+  zoom: 1;
+}
+.gwt-ClosePanel-ForSell .dialogTopRightInner {
+  width: 8px;
+  zoom: 1;
+}
+.gwt-ClosePanel-ForSell .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+.gwt-ClosePanel-ForSell .dialogBottomRightInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+.gwt-ClosePanel-ForSell .dialogTopLeft {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogTopRight {
+ background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogBottomLeft {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogBottomRight {
+ background: #CC0000;
+}
+* html .gwt-ClosePanel-ForSell .dialogTopLeftInner {
+  width: 5px;
+  overflow: hidden;
+}
+* html .gwt-ClosePanel-ForSell .dialogTopRightInner {
+  width: 8px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  overflow: hidden;
+}
+* html .gwt-ClosePanel-ForSell .dialogBottomRightInner {
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+

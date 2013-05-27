@@ -5,6 +5,10 @@ import java.util.Date;
  
 
 public class DiaryEntryVw implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2690926580367400310L;
 	private DiaryEntryDTO diaryEntry;
 	private String user_name;
 	private String task;

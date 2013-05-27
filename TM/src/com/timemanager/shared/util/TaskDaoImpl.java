@@ -4,8 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -36,8 +34,9 @@ public class TaskDaoImpl implements TaskDao{
 	}
 	
 	@Override
-	public List<TaskDTO> findAll(long user_id) {
-		return jdbcTemplate.query( "select * from Task where user_id = ? ", new Object[] { user_id }, new TaskMapper()); 
+	public List<TaskDTO> findAll(long user_id,long category_id) {
+		return jdbcTemplate.query( "select * from Task where user_id = ? and category_id = ? "
+				, new Object[] { user_id , category_id}, new TaskMapper()); 
 	}
 	
 	private static final class TaskMapper implements RowMapper { 

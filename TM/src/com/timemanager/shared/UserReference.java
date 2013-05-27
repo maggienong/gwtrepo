@@ -1,30 +1,27 @@
 package com.timemanager.shared;
  
-import java.util.HashMap;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 
-public class UserReference {
+public class UserReference implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8765839879379057970L;
 	private UserDTO user;
-	private HashMap<Integer,CategoryDTO> categoryMap;
-	private HashMap<Integer,TaskDTO> taskMap;
+	private Map<CategoryDTO,List<TaskDTO>> categoryMap; 
 	public UserDTO getUser() {
 		return user;
 	}
 	public void setUser(UserDTO user) {
 		this.user = user;
 	}
-	public HashMap<Integer, CategoryDTO> getCategoryMap() {
+	public Map<CategoryDTO, List<TaskDTO>> getCategoryMap() {
 		return categoryMap;
 	}
-	public void setCategoryMap(HashMap<Integer, CategoryDTO> categoryMap) {
+	public void setCategoryMap(Map<CategoryDTO, List<TaskDTO>> categoryMap) {
 		this.categoryMap = categoryMap;
 	}
-	public HashMap<Integer, TaskDTO> getTaskMap() {
-		return taskMap;
-	}
-	public void setTaskMap(HashMap<Integer, TaskDTO> taskMap) {
-		this.taskMap = taskMap;
-	}
- 
-	 
 }

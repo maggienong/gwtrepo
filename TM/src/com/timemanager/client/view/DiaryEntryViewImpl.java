@@ -97,6 +97,11 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 		this.dataProvider = dataProvider;
 	}
 
+	
+	public Button getAddButton() {
+		return addButton;
+	}
+
 	public void addDataToProvider(List<DiaryEntryVw> listToWrap) {
 		dataProvider.setList(listToWrap );
 		dataProvider.addDataDisplay(dataGrid);

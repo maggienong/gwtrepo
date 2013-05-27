@@ -8,5 +8,5 @@ public interface TaskDao {
 	public void insert(TaskDTO dto);
 	public int delete(long id);
 	public TaskDTO findById(long id);
-	public List<TaskDTO> findAll(long user_id);
+	public List<TaskDTO> findAll(long user_id, long categor_id);
 }
