@@ -1,2 +1,3 @@
 # Module tm
 # RPC service class, partial path of RPC policy file
+com.timemanager.client.TimeManagerService, C77E472798D02CF9D075C3C708629B5B.gwt.rpc
