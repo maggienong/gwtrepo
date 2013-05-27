@@ -12,27 +12,36 @@
 		 margin-right: auto;
 		} 
 		.title { 
-			align: center;
+			text-align: center;
+		}
+		.center { 
+			margin-left: auto;
+		 	margin-right: auto;
+		}
+		.red {
+			color: red;
+			text-align: center;
 		}
 	</ui:style>
 
   <g:DecoratorPanel addStyleNames="{style.addTaskPanel}">
-	 <g:VerticalPanel width="400px" height="250px"> 
+	 <g:VerticalPanel width="400px" height="250px" > 
 	        <g:Label   text="Add Diary Entry" addStyleNames="{style.title}"/>
-	        <g:HorizontalPanel>
-      			<g:Label>Category: </g:Label>
-	        	<g:ValueListBox ui:field="categoryList"/>
+	        <g:Label ui:field="status" text="" addStyleNames="{style.red}"/>
+	        <g:HorizontalPanel  addStyleNames="{style.center}">
+      			<g:Label width="100px">Category: </g:Label>
+	        	<g:ValueListBox ui:field="categoryList" width="200px"/>
 	        </g:HorizontalPanel>
-	        <g:HorizontalPanel>
-      			<g:Label>Task: </g:Label>
-	        	<g:ValueListBox ui:field="taskList"/>  
+	        <g:HorizontalPanel  addStyleNames="{style.center}">
+      			<g:Label width="100px">Task: </g:Label>
+	        	<g:ValueListBox ui:field="taskList" width="200px"/>  
 	        </g:HorizontalPanel>
-	        <g:HorizontalPanel>
-      			<g:Label>Duration: </g:Label>
-      			<g:TextBox ui:field="duration" focus="true"/> 
+	        <g:HorizontalPanel  addStyleNames="{style.center}">
+      			<g:Label width="100px">Duration: </g:Label>
+      			<g:TextBox ui:field="duration" focus="true" width="200px"/> 
     		</g:HorizontalPanel>
 	        
-	        <g:HorizontalPanel>
+	        <g:HorizontalPanel  addStyleNames="{style.center}">
 	        	<g:Button ui:field="addButton">Add</g:Button>
 	        	<g:Button ui:field="cancelButton">Cancel</g:Button> 
 	        </g:HorizontalPanel>  

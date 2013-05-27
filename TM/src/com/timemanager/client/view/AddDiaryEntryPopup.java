@@ -4,13 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
- 
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.text.shared.Renderer;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.ValueListBox;
 import com.google.gwt.user.client.ui.Widget;
@@ -26,6 +28,7 @@ public class AddDiaryEntryPopup extends ClosablePanel implements AddDiaryEntryPo
 	@UiField Button cancelButton;
 	@UiField Button addButton;
 	@UiField TextBox duration;
+	@UiField Label status;
 	@UiField(provided = true) ValueListBox<CategoryDTO> categoryList = 
 			new ValueListBox<CategoryDTO>(new Renderer<CategoryDTO>() { 
 				@Override
@@ -75,5 +78,16 @@ public class AddDiaryEntryPopup extends ClosablePanel implements AddDiaryEntryPo
 	public ValueListBox<TaskDTO> getTaskList() {
 		return taskList;
 	}
-	
+
+	public void center() {
+		int left = (Window.getClientWidth() - getOffsetWidth()) >> 1;
+		int top = (Window.getClientHeight() - getOffsetHeight()) >> 1;
+		setPopupPosition(Math.max(Window.getScrollLeft() + left, 0), Math.max(
+				Window.getScrollTop() + top, 0));
+	}
+
+	public Label getStatus() {
+		return status;
+	} 
+
 }

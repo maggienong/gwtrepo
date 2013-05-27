@@ -6,6 +6,7 @@ import java.util.List;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.timemanager.client.TimeManagerService;
 import com.timemanager.shared.CategoryDTO;
+import com.timemanager.shared.DiaryEntryDTO;
 import com.timemanager.shared.DiaryEntryVw;
 import com.timemanager.shared.TaskDTO;
 import com.timemanager.shared.UserDTO;
@@ -43,6 +44,16 @@ public class TimeManagerServiceImpl extends RemoteServiceServlet implements Time
 		}
 		obj.setCategoryMap(categoryMap);
 		return obj;
+	}
+
+
+	@Override
+	public void addNewDiaryEntry(DiaryEntryDTO dto) {
+		DiaryEntryDao dao = (DiaryEntryDao) SpringContext.getInstance().getBean("DiaryEntryDao");
+		if (dto!=null) {
+			dao.insert(dto);
+		}
+		return;
 	}
 
 }

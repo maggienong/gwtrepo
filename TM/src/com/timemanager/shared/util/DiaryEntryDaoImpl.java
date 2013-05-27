@@ -19,7 +19,7 @@ public class DiaryEntryDaoImpl implements DiaryEntryDao{
 	
 	@Override
 	public void insert(DiaryEntryDTO dto) {
-		jdbcTemplate.update("insert into Task(user_id,category_id,task_id,duration,start_date,end_date,update_date) values(?,?,?,?,?,?,now())",
+		jdbcTemplate.update("insert into DiaryEntry(user_id,category_id,task_id,duration,start_date,end_date,update_date) values(?,?,?,?,?,?,now())",
 				new Object[] { dto.getUser_id(), dto.getCategory_id(), dto.getTask_id(),dto.getDuration(),dto.getStart_time(),dto.getEnd_time() });
 	}
 	@Override

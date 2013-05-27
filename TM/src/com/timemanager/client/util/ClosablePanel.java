@@ -124,7 +124,7 @@ public class ClosablePanel extends DialogBox {
       positionClose();
    }
    
-   public void hide() {
+   public void hideWindow() {
 	   ClosablePanel.this.hide();
        closePnl.hide();
    }
