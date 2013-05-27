@@ -4,27 +4,33 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.google.gwt.cell.client.CheckboxCell;
+import com.google.gwt.cell.client.EditTextCell;
+import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.builder.shared.TableCellBuilder;
+import com.google.gwt.dom.builder.shared.TableRowBuilder;
+import com.google.gwt.dom.client.Style.TextAlign;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.i18n.client.DateTimeFormat;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.cellview.client.AbstractCellTableBuilder;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.ColumnSortEvent.ListHandler;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.cellview.client.SimplePager.TextLocation;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.datepicker.client.DateBox;
 import com.google.gwt.view.client.DefaultSelectionEventManager;
 import com.google.gwt.view.client.ListDataProvider;
 import com.google.gwt.view.client.MultiSelectionModel;
 import com.google.gwt.view.client.ProvidesKey;
-import com.google.gwt.view.client.SelectionModel;
 import com.timemanager.shared.DiaryEntryVw;
 
 public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
@@ -37,6 +43,10 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 
 	@UiField(provided = true) DataGrid<DiaryEntryVw> dataGrid;
 	@UiField(provided = true) SimplePager pager;
+	@UiField Button addButton;
+	@UiField Button deleteButton;
+	@UiField Button saveButton;
+	@UiField DateBox created;
 
 	public DiaryEntryViewImpl() {
 		ProvidesKey<DiaryEntryVw> KEY_PROVIDER = new ProvidesKey<DiaryEntryVw>() {
@@ -46,9 +56,10 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 			}
 		};
 
-		dataGrid = new DataGrid<DiaryEntryVw>(KEY_PROVIDER);
+		//DataGrid.Resources customDataGridResources = GWT.create(CustomDataGridResources.class);
+		dataGrid = new DataGrid<DiaryEntryVw>(20,KEY_PROVIDER);
 		dataGrid.setWidth("700px");
-		dataGrid.setHeight("300px");
+		dataGrid.setHeight("400px");
 
 		dataGrid.setAutoHeaderRefreshDisabled(true); 
 		dataGrid.setEmptyTableWidget(new Label("No Data Yet"));
@@ -65,12 +76,13 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 		pager.setDisplay(dataGrid);
 
 		// Add a selection model so we can select cells.
-		final SelectionModel<DiaryEntryVw> selectionModel = new MultiSelectionModel<DiaryEntryVw>(KEY_PROVIDER);
+		final MultiSelectionModel<DiaryEntryVw> selectionModel = new MultiSelectionModel<DiaryEntryVw>(KEY_PROVIDER);
 		dataGrid.setSelectionModel(selectionModel, DefaultSelectionEventManager.<DiaryEntryVw> createCheckboxManager());
 
 		// Initialize the columns.
 		initTableColumns(selectionModel, sortHandler); 
 
+		//dataGrid.setTableBuilder(new CustomTableBuilder());
 		initWidget(uiBinder.createAndBindUi(this));
 
 		dataGrid.redraw();
@@ -89,7 +101,7 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 		dataProvider.setList(listToWrap );
 		dataProvider.addDataDisplay(dataGrid);
 	}
-	private void initTableColumns(final SelectionModel<DiaryEntryVw> selectionModel,
+	private void initTableColumns(final MultiSelectionModel<DiaryEntryVw> selectionModel,
 			ListHandler<DiaryEntryVw> sortHandler) {
 		// Checkbox column. This table will uses a checkbox column for selection.
 		// Alternatively, you can call dataGrid.setSelectionEnabled(true) to enable
@@ -102,7 +114,9 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 				return selectionModel.isSelected(object);
 			}
 		};
-		dataGrid.addColumn(checkColumn, SafeHtmlUtils.fromSafeConstant("<br/>"));
+		CheckboxHeader header = new CheckboxHeader(selectionModel, dataProvider);
+		dataGrid.addColumn(checkColumn, header);
+		//dataGrid.addColumn(checkColumn, SafeHtmlUtils.fromSafeConstant("<br/>"));
 		dataGrid.setColumnWidth(checkColumn,40, Unit.PX);
 
 		// First name.
@@ -132,12 +146,20 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 
 		// Duration.
 		Column<DiaryEntryVw, String> durationColumn =
-				new Column<DiaryEntryVw, String>(new TextCell()) {
+				new Column<DiaryEntryVw, String>(new EditTextCell()) {
 			@Override
 			public String getValue(DiaryEntryVw object) {
 				return String.valueOf(object.getDuration());
 			}
 		};
+		durationColumn.setFieldUpdater(new FieldUpdater<DiaryEntryVw, String>() {
+			@Override
+			public void update(int index, DiaryEntryVw object, String value) {
+				// Called when the user changes the value.
+				selectionModel.setSelected(object, true);
+				object.getDiaryEntry().setDuration(Double.parseDouble(value)); 
+			}
+		});
 		durationColumn.setSortable(true);
 		sortHandler.setComparator(durationColumn, new Comparator<DiaryEntryVw>() {
 			@Override
@@ -147,7 +169,7 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 		});
 		dataGrid.addColumn(durationColumn, "Duration");
 		dataGrid.setColumnWidth(durationColumn, 15, Unit.PCT);
-		
+
 		final DateTimeFormat f = DateTimeFormat.getFormat("yyyy/MM/dd HH:mm:ss");
 
 		// Start Time
@@ -185,5 +207,32 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 		});
 		dataGrid.addColumn(endTimeColumn, "End Time");
 		dataGrid.setColumnWidth(endTimeColumn, 25, Unit.PCT);
+	}
+
+	private class CustomTableBuilder extends AbstractCellTableBuilder<DiaryEntryVw> {
+		String category = "";
+
+		public CustomTableBuilder() {
+			super(dataGrid);
+		}
+
+		@Override
+		protected void buildRowImpl(DiaryEntryVw rowValue, int absRowIndex) {
+			if (!category.equals(rowValue.getCategory())) {
+				TableRowBuilder row = startRow();
+				row.style().textAlign(TextAlign.LEFT);
+				TableCellBuilder td = row.startTD().colSpan(dataGrid.getColumnCount());
+				//td.style().trustedBackgroundColor("#0066cc").endStyle();
+				td.text(rowValue.getCategory()).endTD();
+				row.endTR();
+			}
+			TableRowBuilder row = startRow();
+			for (int i=0;i<dataGrid.getColumnCount();i++) {
+				TableCellBuilder td = row.startTD(); 
+				renderCell(td, createContext(i), dataGrid.getColumn(i), rowValue); 
+				td.endTD();
+			}
+			row.endTR();
+		}
 	}
 }

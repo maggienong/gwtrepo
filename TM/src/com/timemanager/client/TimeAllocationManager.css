@@ -344,14 +344,14 @@ h1 {
 }
 
 .cellTableSelectedRow {
-  background: #628cd5;
+  background: #B1BDF1;
   color: white;
   height: auto;
   overflow: auto;
 }
 
 .cellTableSelectedRowCell {
-  border: selectionBorderWidth solid #628cd5;
+  border: selectionBorderWidth solid #B1BDF1;
 }
 
 /**

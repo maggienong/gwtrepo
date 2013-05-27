@@ -12,38 +12,35 @@
 		 margin-left: 5px;
 		 margin-right: 5px;
 		 background: white; 
-		 border: 1px solid #447799;
+		 border: 1px solid #e4e9eb;
 		} 
 		
 		.pager {
-			margin-bottom: 10px;			
-		 	vertical-align: middle;
-		 	align: center; 
-		 	border: 1px solid #447799;
+			margin-top: 10px;
 		}
 		
 		.datagrid {
-			border: 1px solid #447799;
+			border: 1px solid #454547;
 			margin-left: auto;
 		 	margin-right: auto;
-		 	background: silver; 
+		 	background: white; 
 		}
 		
 		.southpanel {
-			border: 1px solid #447799;
+			border: 1px solid #454547;
 			margin-top: 10px; 
 			margin-left: auto;
 		 	margin-right: auto;
-		 	vertical-align: middle;
+		 	vertical-align: top;
 		}
 	</ui:style>
 	
   <g:DockLayoutPanel  unit="PX"  addStyleNames="{style.mainpanel}">
-   <g:north size="140">
+   <g:north size="100">
       <g:HTMLPanel addStyleNames="{style.pager}" >
-        <table style="width:100%;height:100%"   >
+        <table style="width:100%;height:100%;"   >
           <tr>
-            <td align="center">
+            <td align="center"  valign="bottom">
               <c:SimplePager
                 ui:field='pager' />
             </td>
@@ -58,14 +55,14 @@
     </g:center>
 
     <!-- Pager. -->
-    <g:south size="150"> 
+    <g:south size="100"> 
     	<g:HorizontalPanel addStyleNames="{style.southpanel}" >
     	<g:cell>
     		<g:HTMLPanel>
     		<table ><tr>
     	  		<td><g:Button ui:field="addButton">Add</g:Button>  </td>
     	  		<td><g:Button ui:field="deleteButton">Delete</g:Button></td>
-    	  		<td><g:Button ui:field="updateButton">Update</g:Button> </td>
+    	  		<td><g:Button ui:field="saveButton">Save</g:Button> </td>
     		</tr></table>
     		</g:HTMLPanel>
     	</g:cell>

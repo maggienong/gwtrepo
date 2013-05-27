@@ -43,7 +43,7 @@ public class MenuBarViewImpl extends Composite implements MenuBarView {
 		//menuTop.setPixelSize(800, 20);
 		 
 		HorizontalPanel panel = new HorizontalPanel();
-		HTML html = new HTML("<div >TM </div>"); 
+		HTML html = new HTML("<div > </div>"); 
 		html.setWidth("30px");
 		panel.add(html); 
 		panel.add(menuTop);
