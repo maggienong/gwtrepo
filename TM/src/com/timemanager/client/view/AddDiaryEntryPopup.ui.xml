@@ -1,0 +1,41 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder 
+  xmlns:ui="urn:ui:com.google.gwt.uibinder"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:style>
+		.addTaskPanel {
+		 margin-top: 10px;
+		 align: center;
+		 background: white;
+		 margin-left: auto;
+		 margin-right: auto;
+		} 
+		.title { 
+			align: center;
+		}
+	</ui:style>
+
+  <g:DecoratorPanel addStyleNames="{style.addTaskPanel}">
+	 <g:VerticalPanel width="400px" height="250px"> 
+	        <g:Label   text="Add Diary Entry" addStyleNames="{style.title}"/>
+	        <g:HorizontalPanel>
+      			<g:Label>Category: </g:Label>
+	        	<g:ValueListBox ui:field="categoryList"/>
+	        </g:HorizontalPanel>
+	        <g:HorizontalPanel>
+      			<g:Label>Task: </g:Label>
+	        	<g:ValueListBox ui:field="taskList"/>  
+	        </g:HorizontalPanel>
+	        <g:HorizontalPanel>
+      			<g:Label>Duration: </g:Label>
+      			<g:TextBox ui:field="duration" focus="true"/> 
+    		</g:HorizontalPanel>
+	        
+	        <g:HorizontalPanel>
+	        	<g:Button ui:field="addButton">Add</g:Button>
+	        	<g:Button ui:field="cancelButton">Cancel</g:Button> 
+	        </g:HorizontalPanel>  
+	  </g:VerticalPanel>
+  </g:DecoratorPanel>
+</ui:UiBinder> 
