@@ -80,8 +80,8 @@ public class AddDiaryEntryPopup extends ClosablePanel implements AddDiaryEntryPo
 	}
 
 	public void center() {
-		int left = (Window.getClientWidth() - getOffsetWidth()) >> 1;
-		int top = (Window.getClientHeight() - getOffsetHeight()) >> 1;
+		int left = (Window.getClientWidth() - getOffsetWidth()) >> 1 >>1;
+		int top = (Window.getClientHeight() - getOffsetHeight()) >> 1 >>1;
 		setPopupPosition(Math.max(Window.getScrollLeft() + left, 0), Math.max(
 				Window.getScrollTop() + top, 0));
 	}

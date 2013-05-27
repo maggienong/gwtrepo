@@ -24,6 +24,7 @@ import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.cellview.client.SimplePager.TextLocation;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment.HorizontalAlignmentConstant;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.user.datepicker.client.DateBox;
@@ -56,7 +57,7 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 			}
 		};
 
-		//DataGrid.Resources customDataGridResources = GWT.create(CustomDataGridResources.class);
+		DataGrid.Resources customDataGridResources = GWT.create(CustomDataGridResources.class);
 		dataGrid = new DataGrid<DiaryEntryVw>(20,KEY_PROVIDER);
 		dataGrid.setWidth("700px");
 		dataGrid.setHeight("400px");

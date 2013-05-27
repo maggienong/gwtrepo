@@ -31,7 +31,7 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public UserDTO findById(long id) {
-		String sql = "select * from user where id = ?";
+		String sql = "select * from User where id = ?";
 		 
 		UserDTO user = (UserDTO)jdbcTemplate.queryForObject( sql, new Object[] { id }, new UserMapper());
 

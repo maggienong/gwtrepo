@@ -62,7 +62,7 @@ public class AddDiaryEntryPopupPresenter implements Presenter {
 
 					@Override
 					public void onFailure(Throwable e) {
-						view.getStatus().setText("entry save failed");
+						view.getStatus().setText("failed to save entry");
 					}
 
 					@Override
