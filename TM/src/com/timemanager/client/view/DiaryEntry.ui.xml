@@ -3,7 +3,7 @@
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:c="urn:import:com.google.gwt.user.cellview.client"
-  xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+  xmlns:d='urn:import:com.google.gwt.user.datepicker.client' xmlns:generic="urn:import:com.sun.org.apache.bcel.internal.generic">
 
     <ui:style>
 		.mainpanel {
@@ -31,7 +31,8 @@
 			margin-top: 10px; 
 			margin-left: auto;
 		 	margin-right: auto;
-		 	vertical-align: top;
+		 	vertical-align: middle;
+		 	align: center;
 		}
 	</ui:style>
 	
@@ -55,25 +56,30 @@
     </g:center>
 
     <!-- Pager. -->
-    <g:south size="100"> 
-    	<g:HorizontalPanel addStyleNames="{style.southpanel}" >
-    	<g:cell>
-    		<g:HTMLPanel>
-    		<table ><tr>
-    	  		<td><g:Button ui:field="addButton">Add</g:Button>  </td>
-    	  		<td><g:Button ui:field="deleteButton">Delete</g:Button></td>
-    	  		<td><g:Button ui:field="saveButton">Save</g:Button> </td>
-    		</tr></table>
-    		</g:HTMLPanel>
-    	</g:cell>
-    	<g:cell>
-    		<g:HTMLPanel>
-    		<table><tr> 
-    	  		<td><d:DateBox ui:field="created"></d:DateBox></td> 
-    		</tr></table>
-    		</g:HTMLPanel>
-    	</g:cell>
-    	</g:HorizontalPanel>
+    <g:south size="130"> 
+    	  <g:HTMLPanel>
+        <table style="width:100%;height:100%;"   >
+          <tr>
+            <td align="center"  valign="top">
+            <g:HorizontalPanel addStyleNames="{style.southpanel}">
+    		<g:cell> <g:HTMLPanel>
+    			<table ><tr><td valign="middle">
+    				<table><tr>
+    	  			<td><g:Button ui:field="addButton">Add</g:Button>  </td>
+    	  			<td><g:Button ui:field="deleteButton">Delete</g:Button></td>
+    	  			<td><g:Button ui:field="saveButton">Save</g:Button> </td>
+    	  			</tr></table>
+    			</td><td>
+    				<table><tr>
+    	  			<td><d:DateBox ui:field="created"></d:DateBox></td> 
+    				</tr></table> 
+    			</td></tr></table>
+    			</g:HTMLPanel>
+    			</g:cell>
+    		 </g:HorizontalPanel>
+    		 </td>
+			</tr></table>
+			</g:HTMLPanel>
     </g:south>
    
   </g:DockLayoutPanel>
