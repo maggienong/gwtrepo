@@ -200,16 +200,16 @@ public class SimplePager_Resources_default_InlineClientBundleGenerator implement
         return "simplePagerStyle";
       }
       public String getText() {
-        return (".GPBYFDELH{padding:" + ("4px"+ " " +"8px")  + ";text-align:" + ("center")  + ";}.GPBYFDEJH{padding:" + ("4px")  + ";cursor:" + ("pointer")  + ";cursor:" + ("hand")  + ";}.GPBYFDEKH{cursor:" + ("default")  + ";}");
+        return (".GGT1V4UCLH{padding:" + ("4px"+ " " +"8px")  + ";text-align:" + ("center")  + ";}.GGT1V4UCJH{padding:" + ("4px")  + ";cursor:" + ("pointer")  + ";cursor:" + ("hand")  + ";}.GGT1V4UCKH{cursor:" + ("default")  + ";}");
       }
       public java.lang.String button(){
-        return "GPBYFDEJH";
+        return "GGT1V4UCJH";
       }
       public java.lang.String disabledButton(){
-        return "GPBYFDEKH";
+        return "GGT1V4UCKH";
       }
       public java.lang.String pageDetails(){
-        return "GPBYFDELH";
+        return "GGT1V4UCLH";
       }
     }
     ;

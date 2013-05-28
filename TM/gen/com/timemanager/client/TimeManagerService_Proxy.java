@@ -13,7 +13,7 @@ import com.google.gwt.user.client.rpc.impl.RpcStatsContext;
 
 public class TimeManagerService_Proxy extends RemoteServiceProxy implements com.timemanager.client.TimeManagerServiceAsync {
   private static final String REMOTE_SERVICE_INTERFACE_NAME = "com.timemanager.client.TimeManagerService";
-  private static final String SERIALIZATION_POLICY ="01E61BA0E2ED3E4D7B9CAC549EA5E688";
+  private static final String SERIALIZATION_POLICY ="F102886F4C3149299D854B47AF030093";
   private static final com.timemanager.client.TimeManagerService_TypeSerializer SERIALIZER = new com.timemanager.client.TimeManagerService_TypeSerializer();
   
   public TimeManagerService_Proxy() {
@@ -25,6 +25,18 @@ public class TimeManagerService_Proxy extends RemoteServiceProxy implements com.
   
   public void getAllDiaryEntry(long user_id, com.google.gwt.user.client.rpc.AsyncCallback callback) {
     com.google.gwt.user.client.rpc.impl.RemoteServiceProxy.ServiceHelper helper = new com.google.gwt.user.client.rpc.impl.RemoteServiceProxy.ServiceHelper("TimeManagerService_Proxy", "getAllDiaryEntry");
+    try {
+      SerializationStreamWriter streamWriter = helper.start(REMOTE_SERVICE_INTERFACE_NAME, 1);
+      streamWriter.writeString("J");
+      streamWriter.writeLong(user_id);
+      helper.finish(callback, ResponseReader.OBJECT);
+    } catch (SerializationException ex) {
+      callback.onFailure(ex);
+    }
+  }
+  
+  public void getUserReference(long user_id, com.google.gwt.user.client.rpc.AsyncCallback callback) {
+    com.google.gwt.user.client.rpc.impl.RemoteServiceProxy.ServiceHelper helper = new com.google.gwt.user.client.rpc.impl.RemoteServiceProxy.ServiceHelper("TimeManagerService_Proxy", "getUserReference");
     try {
       SerializationStreamWriter streamWriter = helper.start(REMOTE_SERVICE_INTERFACE_NAME, 1);
       streamWriter.writeString("J");

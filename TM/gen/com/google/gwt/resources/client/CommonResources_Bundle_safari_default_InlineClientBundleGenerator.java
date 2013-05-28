@@ -20,10 +20,10 @@ public class CommonResources_Bundle_safari_default_InlineClientBundleGenerator i
         return "inlineBlockStyle";
       }
       public String getText() {
-        return (".GPBYFDEH{position:" + ("relative")  + ";display:" + ("inline-block")  + ";}");
+        return (".GGT1V4UCH{position:" + ("relative")  + ";display:" + ("inline-block")  + ";}");
       }
       public java.lang.String inlineBlock(){
-        return "GPBYFDEH";
+        return "GGT1V4UCH";
       }
     }
     ;

@@ -20,10 +20,10 @@ public class CommonResources_Bundle_ie6_default_StaticClientBundleGenerator impl
         return "inlineBlockStyle";
       }
       public String getText() {
-        return (".GPBYFDEH{position:" + ("relative")  + ";display:" + ("inline-block")  + ";zoom:" + ("1")  + ";display:" + ("inline")  + ";}");
+        return (".GGT1V4UCH{position:" + ("relative")  + ";display:" + ("inline-block")  + ";zoom:" + ("1")  + ";display:" + ("inline")  + ";}");
       }
       public java.lang.String inlineBlock(){
-        return "GPBYFDEH";
+        return "GGT1V4UCH";
       }
     }
     ;

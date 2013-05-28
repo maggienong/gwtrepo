@@ -92,12 +92,12 @@ public class NativeHorizontalScrollbar_NativeHorizontalScrollbarUiBinderImpl imp
       // Setup section.
 
       // Attach section.
-      UiBinderUtil.TempAttachment attachRecord1 = UiBinderUtil.attachToDom(f_div1);
+      UiBinderUtil.TempAttachment attachRecord3 = UiBinderUtil.attachToDom(f_div1);
       get_scrollable();
       get_contentDiv();
 
       // Detach section.
-      attachRecord1.detach();
+      attachRecord3.detach();
 
       return f_div1;
     }

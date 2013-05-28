@@ -20,10 +20,19 @@ public class DiaryEntryViewImpl_myViewUiBinderImpl_GenBundle_default_StaticClien
         return "style";
       }
       public String getText() {
-        return com.google.gwt.i18n.client.LocaleInfo.getCurrentLocale().isRTL() ? ((".GPBYFDEFI{margin-top:" + ("50px")  + ";margin-botton:" + ("10px")  + ";margin-right:" + ("auto")  + ";margin-left:" + ("auto")  + ";background:" + ("white")  + ";}")) : ((".GPBYFDEFI{margin-top:" + ("50px")  + ";margin-botton:" + ("10px")  + ";margin-left:" + ("auto")  + ";margin-right:" + ("auto")  + ";background:" + ("white")  + ";}"));
+        return com.google.gwt.i18n.client.LocaleInfo.getCurrentLocale().isRTL() ? ((".GGT1V4UCOJ{margin-top:" + ("50px")  + ";margin-bottom:" + ("50px")  + ";margin-right:" + ("5px")  + ";margin-left:" + ("5px")  + ";background:" + ("white")  + ";border:" + ("1px"+ " " +"solid"+ " " +"#e4e9eb")  + ";}.GGT1V4UCPJ{margin-top:" + ("10px")  + ";}.GGT1V4UCNJ{border:" + ("1px"+ " " +"solid"+ " " +"#454547")  + ";margin-right:" + ("auto")  + ";margin-left:" + ("auto")  + ";background:") + (("white")  + ";}.GGT1V4UCAK{border:" + ("1px"+ " " +"solid"+ " " +"#454547")  + ";margin-top:" + ("10px")  + ";margin-right:" + ("auto")  + ";margin-left:" + ("auto")  + ";vertical-align:" + ("top")  + ";}")) : ((".GGT1V4UCOJ{margin-top:" + ("50px")  + ";margin-bottom:" + ("50px")  + ";margin-left:" + ("5px")  + ";margin-right:" + ("5px")  + ";background:" + ("white")  + ";border:" + ("1px"+ " " +"solid"+ " " +"#e4e9eb")  + ";}.GGT1V4UCPJ{margin-top:" + ("10px")  + ";}.GGT1V4UCNJ{border:" + ("1px"+ " " +"solid"+ " " +"#454547")  + ";margin-left:" + ("auto")  + ";margin-right:" + ("auto")  + ";background:") + (("white")  + ";}.GGT1V4UCAK{border:" + ("1px"+ " " +"solid"+ " " +"#454547")  + ";margin-top:" + ("10px")  + ";margin-left:" + ("auto")  + ";margin-right:" + ("auto")  + ";vertical-align:" + ("top")  + ";}"));
       }
-      public java.lang.String dataGrid(){
-        return "GPBYFDEFI";
+      public java.lang.String datagrid(){
+        return "GGT1V4UCNJ";
+      }
+      public java.lang.String mainpanel(){
+        return "GGT1V4UCOJ";
+      }
+      public java.lang.String pager(){
+        return "GGT1V4UCPJ";
+      }
+      public java.lang.String southpanel(){
+        return "GGT1V4UCAK";
       }
     }
     ;

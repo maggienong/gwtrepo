@@ -20,10 +20,10 @@ public class AddTaskViewImpl_myViewUiBinderImpl_GenBundle_default_InlineClientBu
         return "style";
       }
       public String getText() {
-        return com.google.gwt.i18n.client.LocaleInfo.getCurrentLocale().isRTL() ? ((".GPBYFDEEI{margin-top:" + ("100px")  + ";align:" + ("center")  + ";background:" + ("white")  + ";margin-right:" + ("auto")  + ";margin-left:" + ("auto")  + ";}")) : ((".GPBYFDEEI{margin-top:" + ("100px")  + ";align:" + ("center")  + ";background:" + ("white")  + ";margin-left:" + ("auto")  + ";margin-right:" + ("auto")  + ";}"));
+        return com.google.gwt.i18n.client.LocaleInfo.getCurrentLocale().isRTL() ? ((".GGT1V4UCMJ{margin-top:" + ("100px")  + ";align:" + ("center")  + ";background:" + ("white")  + ";margin-right:" + ("auto")  + ";margin-left:" + ("auto")  + ";}")) : ((".GGT1V4UCMJ{margin-top:" + ("100px")  + ";align:" + ("center")  + ";background:" + ("white")  + ";margin-left:" + ("auto")  + ";margin-right:" + ("auto")  + ";}"));
       }
       public java.lang.String addTaskPanel(){
-        return "GPBYFDEEI";
+        return "GGT1V4UCMJ";
       }
     }
     ;

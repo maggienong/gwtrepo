@@ -20,10 +20,10 @@ public class NativeHorizontalScrollbar_ResourcesTransparant_default_StaticClient
         return "nativeHorizontalScrollbarStyle";
       }
       public String getText() {
-        return (".GPBYFDEOH{opacity:" + ("0.7")  + ";filter:" + ("alpha(opacity = 70)")  + ";-webkit-transition:" + ("opacity"+ " " +"350ms")  + ";-moz-transition:" + ("opacity"+ " " +"350ms")  + ";-o-transition:" + ("opacity"+ " " +"350ms")  + ";transition:" + ("opacity"+ " " +"350ms")  + ";}.GPBYFDEOH:hover{opacity:" + ("1")  + ";filter:" + ("alpha(opacity = 100)")  + ";}");
+        return (".GGT1V4UCOH{opacity:" + ("0.7")  + ";filter:" + ("alpha(opacity = 70)")  + ";-webkit-transition:" + ("opacity"+ " " +"350ms")  + ";-moz-transition:" + ("opacity"+ " " +"350ms")  + ";-o-transition:" + ("opacity"+ " " +"350ms")  + ";transition:" + ("opacity"+ " " +"350ms")  + ";}.GGT1V4UCOH:hover{opacity:" + ("1")  + ";filter:" + ("alpha(opacity = 100)")  + ";}");
       }
       public java.lang.String nativeHorizontalScrollbar(){
-        return "GPBYFDEOH";
+        return "GGT1V4UCOH";
       }
     }
     ;

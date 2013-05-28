@@ -20,10 +20,10 @@ public class CommonResources_Bundle_gecko1_8_default_InlineClientBundleGenerator
         return "inlineBlockStyle";
       }
       public String getText() {
-        return (".GPBYFDEH{display:" + ("\\-moz-inline-box")  + ";position:" + ("relative")  + ";display:" + ("inline-block")  + ";}");
+        return (".GGT1V4UCH{display:" + ("\\-moz-inline-box")  + ";position:" + ("relative")  + ";display:" + ("inline-block")  + ";}");
       }
       public java.lang.String inlineBlock(){
-        return "GPBYFDEH";
+        return "GGT1V4UCH";
       }
     }
     ;

@@ -92,12 +92,12 @@ public class NativeVerticalScrollbar_NativeVerticalScrollbarUiBinderImpl impleme
       // Setup section.
 
       // Attach section.
-      UiBinderUtil.TempAttachment attachRecord2 = UiBinderUtil.attachToDom(f_div1);
+      UiBinderUtil.TempAttachment attachRecord4 = UiBinderUtil.attachToDom(f_div1);
       get_scrollable();
       get_contentDiv();
 
       // Detach section.
-      attachRecord2.detach();
+      attachRecord4.detach();
 
       return f_div1;
     }

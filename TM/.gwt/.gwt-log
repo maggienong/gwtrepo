@@ -30,3 +30,238 @@ Compiling...
    Compilation completed in 0.00 seconds
 Removing invalidated units
 Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2718 units from cache.
+Compiling...
+   70% complete (ETR: 2 seconds)
+   70% complete (ETR: 2 seconds)
+   70% complete (ETR: 2 seconds)
+   70% complete (ETR: 2 seconds)
+   70% complete (ETR: 2 seconds)
+   70% complete (ETR: 2 seconds)
+   70% complete (ETR: 2 seconds)
+   70% complete (ETR: 2 seconds)
+   80% complete (ETR: 1 seconds)
+   90% complete (ETR: 1 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 11.79 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2718 cached/archived units.  Used 2718 / 2718 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2718 cached/archived units.  Used 2718 / 2718 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2718 cached/archived units.  Used 2718 / 2763 units from cache.
+Compiling...
+   Compilation completed in 0.79 seconds
+Validating units:
+   [ERROR] Errors in 'file:/C:/Users/maggie/git/GitLocal/TM/src/com/timemanager/shared/util/CategoryDaoImpl.java'
+      [ERROR] Line 14: No source code is available for type org.springframework.jdbc.core.JdbcTemplate; did you forget to inherit a required module?
+      [ERROR] Line 40: No source code is available for type org.springframework.jdbc.core.RowMapper<T>; did you forget to inherit a required module?
+      [ERROR] Line 41: No source code is available for type java.sql.ResultSet; did you forget to inherit a required module?
+      [ERROR] Line 41: No source code is available for type java.sql.SQLException; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/C:/Users/maggie/git/GitLocal/TM/src/com/timemanager/shared/util/DBUtil.java'
+      [ERROR] Line 8: No source code is available for type java.sql.Connection; did you forget to inherit a required module?
+      [ERROR] Line 10: The method forName(String) is undefined for the type Class
+      [ERROR] Line 11: No source code is available for type java.sql.DriverManager; did you forget to inherit a required module?
+      [ERROR] Line 15: SQLException.ClassNotFoundException cannot be resolved to a type
+      [ERROR] Line 15: Syntax error on token "|", . expected
+   [ERROR] Errors in 'file:/C:/Users/maggie/git/GitLocal/TM/src/com/timemanager/shared/util/DiaryEntryDaoImpl.java'
+      [ERROR] Line 18: No source code is available for type org.springframework.jdbc.core.JdbcTemplate; did you forget to inherit a required module?
+      [ERROR] Line 44: No source code is available for type org.springframework.jdbc.core.RowMapper<T>; did you forget to inherit a required module?
+      [ERROR] Line 45: No source code is available for type java.sql.ResultSet; did you forget to inherit a required module?
+      [ERROR] Line 45: No source code is available for type java.sql.SQLException; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/C:/Users/maggie/git/GitLocal/TM/src/com/timemanager/shared/util/PropertiesReader.java'
+      [ERROR] Line 9: No source code is available for type java.util.Properties; did you forget to inherit a required module?
+      [ERROR] Line 12: No source code is available for type java.io.FileInputStream; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/C:/Users/maggie/git/GitLocal/TM/src/com/timemanager/shared/util/TaskDaoImpl.java'
+      [ERROR] Line 15: No source code is available for type org.springframework.jdbc.core.JdbcTemplate; did you forget to inherit a required module?
+      [ERROR] Line 42: No source code is available for type org.springframework.jdbc.core.RowMapper<T>; did you forget to inherit a required module?
+      [ERROR] Line 43: No source code is available for type java.sql.ResultSet; did you forget to inherit a required module?
+      [ERROR] Line 43: No source code is available for type java.sql.SQLException; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/C:/Users/maggie/git/GitLocal/TM/src/com/timemanager/shared/util/UserDaoImpl.java'
+      [ERROR] Line 17: No source code is available for type org.springframework.jdbc.core.JdbcTemplate; did you forget to inherit a required module?
+      [ERROR] Line 46: No source code is available for type org.springframework.jdbc.core.RowMapper<T>; did you forget to inherit a required module?
+      [ERROR] Line 47: No source code is available for type java.sql.ResultSet; did you forget to inherit a required module?
+      [ERROR] Line 47: No source code is available for type java.sql.SQLException; did you forget to inherit a required module?
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl.myViewUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671688202.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671688202.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.00 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671688202_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl.myViewUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671690051.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671690051.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.00 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671690051_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl.myViewUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671726696.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671726696.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.00 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671726696_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl.myViewUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671730753.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671730753.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.00 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671730753_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl.myViewUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671734137.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671734137.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.00 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671734137_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl.myViewUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671738050.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671738050.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.00 seconds
+      Removing invalidated units
+Rebinding com.timemanager.client.view.AddTaskViewImpl_myViewUiBinderImpl_designTime1369671738050_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0.01 seconds
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2718 units from cache.
+Compiling...
+   40% complete (ETR: 7 seconds)
+   40% complete (ETR: 7 seconds)
+   40% complete (ETR: 7 seconds)
+   40% complete (ETR: 7 seconds)
+   40% complete (ETR: 7 seconds)
+   50% complete (ETR: 5 seconds)
+   60% complete (ETR: 4 seconds)
+   70% complete (ETR: 3 seconds)
+   80% complete (ETR: 2 seconds)
+   90% complete (ETR: 1 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 16.67 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2718 cached/archived units.  Used 2718 / 2718 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2718 cached/archived units.  Used 2718 / 2718 units from cache.
+Compiling...
+   Compilation completed in 0.00 seconds
+Removing invalidated units
+Finding entry point classes

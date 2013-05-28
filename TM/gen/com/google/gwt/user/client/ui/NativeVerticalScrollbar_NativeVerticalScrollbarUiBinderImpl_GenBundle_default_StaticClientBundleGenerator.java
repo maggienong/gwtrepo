@@ -20,13 +20,13 @@ public class NativeVerticalScrollbar_NativeVerticalScrollbarUiBinderImpl_GenBund
         return "style";
       }
       public String getText() {
-        return (".GPBYFDEKI{position:" + ("relative")  + ";overflow:" + ("hidden")  + ";direction:" + ("ltr")  + ";}.GPBYFDEJI{position:" + ("absolute")  + ";top:" + ("0")  + ";right:" + ("0")  + ";height:" + ("100%")  + ";width:" + ("100px")  + ";overflow-y:" + ("scroll")  + ";overflow-x:" + ("hidden")  + ";}");
+        return (".GGT1V4UCFK{position:" + ("relative")  + ";overflow:" + ("hidden")  + ";direction:" + ("ltr")  + ";}.GGT1V4UCEK{position:" + ("absolute")  + ";top:" + ("0")  + ";right:" + ("0")  + ";height:" + ("100%")  + ";width:" + ("100px")  + ";overflow-y:" + ("scroll")  + ";overflow-x:" + ("hidden")  + ";}");
       }
       public java.lang.String scrollable(){
-        return "GPBYFDEJI";
+        return "GGT1V4UCEK";
       }
       public java.lang.String viewport(){
-        return "GPBYFDEKI";
+        return "GGT1V4UCFK";
       }
     }
     ;

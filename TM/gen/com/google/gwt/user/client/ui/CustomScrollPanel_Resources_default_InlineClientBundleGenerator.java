@@ -20,13 +20,13 @@ public class CustomScrollPanel_Resources_default_InlineClientBundleGenerator imp
         return "customScrollPanelStyle";
       }
       public String getText() {
-        return (".GPBYFDENH{background:" + ("#efefef")  + ";}");
+        return (".GGT1V4UCNH{background:" + ("#efefef")  + ";}");
       }
       public java.lang.String customScrollPanel(){
-        return "GPBYFDEMH";
+        return "GGT1V4UCMH";
       }
       public java.lang.String customScrollPanelCorner(){
-        return "GPBYFDENH";
+        return "GGT1V4UCNH";
       }
     }
     ;
