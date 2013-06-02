@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-
 import com.timemanager.shared.TaskDTO;
 
 public class TaskDaoImpl implements TaskDao{
@@ -15,14 +14,17 @@ public class TaskDaoImpl implements TaskDao{
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public void insert(TaskDTO dto) {
-		jdbcTemplate.update("insert into Task(user_id,category_id,description) values(?,?,?)",
+	public TaskDTO insert(TaskDTO dto) {
+		int obj = jdbcTemplate.update("insert into Task(user_id,category_id,description) values(?,?,?)",
 				new Object[] { dto.getUser_id(), dto.getCategory_id(), dto.getDescription() });
+		List<TaskDTO> list = findAllByDesc(dto.getUser_id(),dto.getCategory_id(), dto.getDescription());
+		if (list!=null && list.size()>0) return list.get(0);
+		return null;
 	}
 	
 	@Override
 	public int delete(long id) {
-		int i = jdbcTemplate.update("delete from Task where id = ? ?",  new Object[] { id });
+		int i = jdbcTemplate.update("delete from Task where id = ? ",  new Object[] { id });
 		return i;
 	}
 	
@@ -48,5 +50,17 @@ public class TaskDaoImpl implements TaskDao{
 			task.setDescription(rs.getString("description"));
 			return task;
 		}
+	}
+
+	@Override
+	public List<TaskDTO> findAllByDesc(long user_id, long category_id, String desc) {
+		return jdbcTemplate.query( "select * from Task where user_id = ? and category_id = ? and description=? order by id desc  "
+				, new Object[] { user_id , category_id, desc}, new TaskMapper()); 
+	}
+
+	@Override
+	public int deleteByCategory(long id) {
+		int i = jdbcTemplate.update("delete from Task where category_id = ? ",  new Object[] { id });
+		return i;
 	}
 }

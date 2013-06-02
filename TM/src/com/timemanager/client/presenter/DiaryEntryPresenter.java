@@ -30,14 +30,18 @@ public class DiaryEntryPresenter implements Presenter {
 		bind();
 		init();
 	}
-	
+
 	public void init() {
-		final long user_id = 1;
+		setUserReference();
+		getData();
+	}
+
+	private void getData() {
 		AsyncCallback<List<DiaryEntryVw>> callback = new AsyncCallback<List<DiaryEntryVw>>() {
 
 			@Override
 			public void onFailure(Throwable e) {
-				Window.alert("failed to retrive " + user_id);
+				Window.alert("failed to retrive ");
 				e.printStackTrace();
 			}
 
@@ -45,15 +49,17 @@ public class DiaryEntryPresenter implements Presenter {
 			public void onSuccess(List<DiaryEntryVw> result) {
 				view.addDataToProvider(result);
 			} 
-			 
+
 		};
-		tmService.getAllDiaryEntry(user_id, callback);
-		
+		tmService.getAllDiaryEntry(view.getFromDate(),view.getToDate(), callback);
+	}
+
+	private void setUserReference() { 
 		AsyncCallback<UserReference> callback1 = new AsyncCallback<UserReference>() {
 
 			@Override
 			public void onFailure(Throwable e) {
-				Window.alert("failed to retrive user reference for " + user_id);
+				Window.alert("failed to retrive user reference for ");
 				e.printStackTrace();
 			}
 
@@ -62,8 +68,8 @@ public class DiaryEntryPresenter implements Presenter {
 				reference = result;
 			}
 		};
-		tmService.getUserReference(user_id, callback1);
-		
+		tmService.getUserReference(callback1);
+
 	}
 
 	private void bind() {
@@ -74,7 +80,7 @@ public class DiaryEntryPresenter implements Presenter {
 				popup.go(container);
 			}
 		});
-		
+
 
 	}
 

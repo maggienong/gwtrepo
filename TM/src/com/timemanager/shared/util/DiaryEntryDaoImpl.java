@@ -2,6 +2,7 @@ package com.timemanager.shared.util;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 
@@ -34,10 +35,11 @@ public class DiaryEntryDaoImpl implements DiaryEntryDao{
 		return dto;
 	}
 	@Override
-	public List<DiaryEntryVw> findAll(long user_id) {
+	public List<DiaryEntryVw> findAll(long user_id, Date fromDate, Date toDate) {
 		return jdbcTemplate.query( "select a.*,t.description as task,c.description as category, u.name as name " 
-	+ "from DiaryEntry a, Task t,Category c, User u where a.user_id = ? and a.user_id = u.id and a.task_id = t.id and a.category_id = c.id"
-				, new Object[] { user_id }, new DiaryEntryMapper()); 
+				+ " from DiaryEntry a, Task t,Category c, User u where a.user_id = ? and a.user_id = u.id and a.task_id = t.id and a.category_id = c.id"
+				+ " and start_date>= ? and end_date<= ?"
+				, new Object[] { user_id, fromDate, toDate }, new DiaryEntryMapper()); 
 	}
 	
 	private static final class DiaryEntryMapper implements RowMapper { 

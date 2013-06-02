@@ -4,6 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.TextBox;
@@ -15,8 +16,9 @@ public class AddTaskViewImpl extends Composite implements AddTaskView {
 	interface myViewUiBinder extends UiBinder<Widget, AddTaskViewImpl> {}
 	private static myViewUiBinder uiBinder =  GWT.create(myViewUiBinder.class);
 
-	@UiField TextBox taskField;
+	@UiField TextBox catField;
 	@UiField Button addButton;
+	@UiField CellTable cellTable;
 	
     public AddTaskViewImpl() {
     	initWidget(uiBinder.createAndBindUi(this));
@@ -27,6 +29,12 @@ public class AddTaskViewImpl extends Composite implements AddTaskView {
     }
     
     public TextBox getTextBox() {
-    	return taskField;
+    	return catField;
     }
+
+	public CellTable getCellTable() {
+		return cellTable;
+	}
+    
+    
 }

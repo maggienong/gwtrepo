@@ -1,6 +1,7 @@
 package com.timemanager.client.view;
 
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import com.google.gwt.cell.client.CheckboxCell;
@@ -24,7 +25,6 @@ import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.cellview.client.SimplePager.TextLocation;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HasHorizontalAlignment.HorizontalAlignmentConstant;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.user.datepicker.client.DateBox;
@@ -40,15 +40,24 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 	private static myViewUiBinder uiBinder =  GWT.create(myViewUiBinder.class);
 
 	private ListDataProvider<DiaryEntryVw> dataProvider = new ListDataProvider<DiaryEntryVw>();
-
+	private ListHandler<DiaryEntryVw> sortHandler;
 
 	@UiField(provided = true) DataGrid<DiaryEntryVw> dataGrid;
 	@UiField(provided = true) SimplePager pager;
 	@UiField Button addButton;
 	@UiField Button deleteButton;
 	@UiField Button saveButton;
-	@UiField DateBox created;
-
+	@UiField DateBox fromDate; 
+	@UiField DateBox toDate; 
+	
+	public Date getFromDate() {
+		return fromDate.getValue();
+	}
+	
+	public Date getToDate() {
+		return toDate.getValue();
+	}
+	
 	public DiaryEntryViewImpl() {
 		ProvidesKey<DiaryEntryVw> KEY_PROVIDER = new ProvidesKey<DiaryEntryVw>() {
 			@Override
@@ -57,8 +66,9 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 			}
 		};
 
-		DataGrid.Resources customDataGridResources = GWT.create(CustomDataGridResources.class);
-		dataGrid = new DataGrid<DiaryEntryVw>(20,KEY_PROVIDER);
+		DataGrid.Resources customDataGridResources = GWT.create(tmDataGridResources.class);
+		//DataGridRecouceBoundle.INSTANCE.stylesheet1().ensureInjected(); 
+		dataGrid = new DataGrid<DiaryEntryVw>(20,customDataGridResources,KEY_PROVIDER);
 		dataGrid.setWidth("700px");
 		dataGrid.setHeight("400px");
 
@@ -67,8 +77,7 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 
 		// Attach a column sort handler to the ListDataProvider to sort the list.
 
-		ListHandler<DiaryEntryVw> sortHandler =
-				new ListHandler<DiaryEntryVw>(getDataProvider().getList());
+		sortHandler = new ListHandler<DiaryEntryVw>(getDataProvider().getList()) ;
 		dataGrid.addColumnSortHandler(sortHandler);
 
 		// Create a Pager to control the table.
@@ -85,8 +94,16 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 
 		//dataGrid.setTableBuilder(new CustomTableBuilder());
 		initWidget(uiBinder.createAndBindUi(this));
-
-		dataGrid.redraw();
+ 
+		fromDate.setTitle("Choose from calendar");
+		fromDate.setWidth("100px");
+		fromDate.setFormat(new MyCustomDateBoxFormat());
+		
+		toDate.setTitle("Choose from calendar");
+		toDate.setWidth("100px");
+		toDate.setFormat(new MyCustomDateBoxFormat());
+		
+		//dataGrid.redraw();
 
 	}
 
@@ -106,6 +123,7 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 	public void addDataToProvider(List<DiaryEntryVw> listToWrap) {
 		dataProvider.setList(listToWrap );
 		dataProvider.addDataDisplay(dataGrid);
+		sortHandler.setList(dataProvider.getList());
 	}
 	private void initTableColumns(final MultiSelectionModel<DiaryEntryVw> selectionModel,
 			ListHandler<DiaryEntryVw> sortHandler) {
@@ -241,4 +259,6 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 			row.endTR();
 		}
 	}
+ 
+	
 }

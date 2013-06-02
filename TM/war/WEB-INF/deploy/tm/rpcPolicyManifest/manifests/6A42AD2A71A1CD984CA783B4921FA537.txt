@@ -1,0 +1,2 @@
+serviceClass: com.timemanager.client.TimeManagerService
+path: AF7173609C11A62130114DE18823A314.gwt.rpc

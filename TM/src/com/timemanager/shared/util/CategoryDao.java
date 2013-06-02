@@ -5,8 +5,9 @@ import java.util.List;
 import com.timemanager.shared.CategoryDTO;
 
 public interface CategoryDao {
-	public void insert(CategoryDTO dto);
+	public CategoryDTO insert(CategoryDTO dto);
 	public int delete(long id);
 	public CategoryDTO findById(long id);
 	public List<CategoryDTO> findAll(long user_id);
+	public List<CategoryDTO> findAllByDesc(long user_id, String desc);
 }

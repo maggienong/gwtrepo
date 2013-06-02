@@ -14,14 +14,17 @@ public class CategoryDaoImpl  implements CategoryDao{
 	private JdbcTemplate jdbcTemplate;
 	
 	@Override
-	public void insert(CategoryDTO dto) {
+	public CategoryDTO insert(CategoryDTO dto) {
 		jdbcTemplate.update("insert into Category(user_id,description) values(?,?)",
 				new Object[] { dto.getUser_id(), dto.getDescription() });
+		List<CategoryDTO> list = findAllByDesc(dto.getUser_id(), dto.getDescription());
+		if (list!=null && list.size()>0) return list.get(0);
+		return null;
 	}
 	
 	@Override
 	public int delete(long id) {
-		int i = jdbcTemplate.update("delete from Category where id = ? ?",  new Object[] { id });
+		int i = jdbcTemplate.update("delete from Category where id = ? ",  new Object[] { id });
 		return i;
 	}
 	
@@ -45,5 +48,11 @@ public class CategoryDaoImpl  implements CategoryDao{
 			category.setDescription(rs.getString("description"));
 			return category;
 		}
+	}
+
+	@Override
+	public List<CategoryDTO> findAllByDesc(long user_id, String desc) {
+		return jdbcTemplate.query( "select * from Category where user_id = ? and description=? order by id desc "
+				, new Object[] { user_id, desc }, new CategorykMapper()); 
 	}
 }

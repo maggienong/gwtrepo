@@ -1,0 +1,394 @@
+/** Add css rules here for your application. */
+@def menuh_color #8FA1B5;
+@def menu_select #BFCAD5;
+
+/** Example rules used by the template application (remove for your app) */ 
+body {
+	background-color: white;
+	text-align: center;
+	margin:0px;
+	padding:0px;
+}
+
+.mainBodyDiv {
+	align: center;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+	background: #e4e9eb;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+
+.sendButton {
+  display: block;
+  font-size: 16pt;
+}
+
+
+/** Most GWT widgets already have a style name defined */
+.gwt-DialogBox {
+  width: 400px;
+}
+
+.dialogVPanel {
+  margin: 5px;
+}
+
+.serverResponseLabelError {
+  color: red;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+  margin: 15px 6px 6px;
+}
+
+.menu_panel {
+	background: menuh_color;
+	padding: 10px 0px 10px 0px;
+}
+.gwt-MenuBar {
+  cursor: default;
+   padding: 0px;
+  margin: 0px 0px 0px 0px;
+  border: 0px;
+ 
+}
+.gwt-MenuBar .gwt-MenuItem {
+  cursor: default;
+ padding: 0px;
+  margin:  0px;
+  border: 0px;
+  text-align: left;
+  color: white;
+  background: menu_select;
+  border-right: 100px solid  menu_select;
+}
+.gwt-MenuBar .gwt-MenuItem-selected { 
+  background: menuh_color;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  border-right: 100px solid menuh_color;
+}
+.gwt-MenuBar-horizontal {
+  background: menuh_color;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+.gwt-MenuBar-horizontal .gwt-MenuItem {
+  padding: 0px 0px 0px 0px;
+  margin:  0px 0px 0px 0px;
+  border: 0px;  
+  border-right: 100px solid menuh_color;
+  vertical-align: bottom;
+  font-weight: bold;
+  background: menuh_color;
+}
+.gwt-MenuBar-horizontal .gwt-MenuItem-selected {
+	background: menu_select;
+	padding: 0px 0px 0px 0px;
+  margin:  0px 0px 0px 0px;
+  border: 0px;  
+  border-right: 100px solid menu_select;
+}
+.gwt-MenuBar-horizontal .gwt-MenuItemSeparator {
+  width: 1px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  border-left: 1px solid #888888;
+  border-right: 1px solid #888888;
+
+}
+.gwt-MenuBar-horizontal .gwt-MenuItemSeparator .menuSeparatorInner {
+  width: 1px;
+  height: 1px;
+  background: white; 
+}
+.gwt-MenuBar-vertical {
+  margin-top: 0px;
+  margin-left: 0px;
+  background: menu_select;
+}
+.gwt-MenuBar-vertical table {
+  border-collapse: collapse;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem {
+  padding: 4px 14px 4px 1px;
+}
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator {
+  padding: 2px 0px;
+}
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator .menuSeparatorInner {
+  height: 1px;
+  padding: 0px;
+  border: 0px;
+  border-top: 1px solid #777777;
+  background: #ddddee;
+  overflow: hidden;
+}
+.gwt-MenuBar-vertical .subMenuIcon {
+  padding-right: 4px;
+}
+.gwt-MenuBar-vertical .subMenuIcon-selected {
+  background: red;
+}
+.gwt-MenuBarPopup {
+  padding: 0px 0px 0px 0px;
+  margin:  0px 0px 0px 0px;
+  border: 0px;  
+  background: menu_select;
+}
+.gwt-MenuBarPopup .menuPopupTopCenter {
+  background: menu_select 0px -12px repeat-x;
+}
+.gwt-MenuBarPopup .menuPopupBottomCenter {
+  background: url(images/hborder.png) 0px -13px repeat-x;
+  -background: url(images/hborder_ie6.png) 0px -13px repeat-x;
+}
+.gwt-MenuBarPopup .menuPopupMiddleLeft {
+  background: url(images/vborder.png) -12px 0px repeat-y;
+  -background: url(images/vborder_ie6.png) -12px 0px repeat-y;
+}
+.gwt-MenuBarPopup .menuPopupMiddleRight {
+  background: url(images/vborder.png) -13px 0px repeat-y;
+  -background: url(images/vborder_ie6.png) -13px 0px repeat-y;
+}
+.gwt-MenuBarPopup .menuPopupTopLeftInner {
+  width: 0px;
+  height: 5px;
+  zoom: 1;
+}
+.gwt-MenuBarPopup .menuPopupTopRightInner {
+  width: 0px;
+  height: 5px;
+  zoom: 1;
+}
+.gwt-MenuBarPopup .menuPopupBottomLeftInner {
+  width: 0px;
+  height: 0px;
+  zoom: 1;
+}
+.gwt-MenuBarPopup .menuPopupBottomRightInner {
+  width: 0px;
+  height: 0px;
+  zoom: 1;
+}
+.gwt-MenuBarPopup .menuPopupTopLeft {
+  background: url(images/corner.png) no-repeat 0px -36px;
+  -background: url(images/corner_ie6.png) no-repeat 0px -36px;
+}
+.gwt-MenuBarPopup .menuPopupTopRight {
+  background: url(images/corner.png) no-repeat -5px -36px;
+  -background: url(images/corner_ie6.png) no-repeat -5px -36px;
+}
+.gwt-MenuBarPopup .menuPopupBottomLeft {
+  background: url(images/corner.png) no-repeat 0px -41px;
+  -background: url(images/corner_ie6.png) no-repeat 0px -41px;
+}
+.gwt-MenuBarPopup .menuPopupBottomRight {
+  background: url(images/corner.png) no-repeat -5px -41px;
+  -background: url(images/corner_ie6.png) no-repeat -5px -41px;
+}
+* html .gwt-MenuBarPopup .menuPopupTopLeftInner {
+  width: 5px;
+  height: 5px;
+  overflow: hidden;
+}
+* html .gwt-MenuBarPopup .menuPopupTopRightInner {
+  width: 8px;
+  height: 5px;
+  overflow: hidden;
+}
+* html .gwt-MenuBarPopup .menuPopupBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  overflow: hidden;
+}
+* html .gwt-MenuBarPopup .menuPopupBottomRightInner {
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.gwt-Button {
+  margin: 0;
+  padding: 3px 5px;
+  text-decoration: none;
+  font-size: small;
+  cursor: pointer;
+  cursor: hand;
+  background: url("images/hborder.png") repeat-x 0px -27px;
+  border: 1px outset #ccc;
+}
+.gwt-Button:active {
+  border: 1px inset #ccc;
+}
+.gwt-Button:hover {
+  border-color: #9cf #69e #69e #7af;
+}
+.gwt-Button[disabled] {
+  cursor: default;
+  color: #888;
+}
+
+
+ 
+.gwt-DialogBox-ClosePanel .Caption {
+  background: #d0e4f6;
+  padding: 4px 4px 4px 8px;
+  cursor: default;
+  border-bottom: 1px solid #bbbbbb;
+  border-top: 18px solid #d0e4f6;
+}
+ 
+.gwt-DialogBox-ClosePanel .dialogContent {
+}
+.gwt-DialogBox-ClosePanel .dialogMiddleCenter {
+  padding: 3px;
+  background: white;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomCenter {
+  background: url(images/standard//hborder.png) repeat-x 0px -4px;
+  -background: url(images/standard/hborder_ie6.png) repeat-x 0px -4px;
+}
+.gwt-DialogBox-ClosePanel .dialogMiddleLeft {
+  background: url(images/standard/vborder.png) repeat-y;
+}
+.gwt-DialogBox-ClosePanel .dialogMiddleRight {
+  background: url(images/standard/vborder.png) repeat-y -4px 0px;
+  -background: url(images/standard/vborder_ie6.png) repeat-y -4px 0px;
+}
+.gwt-DialogBox-ClosePanel .dialogTopLeftInner {
+  width: 5px;
+  zoom: 1;
+}
+.gwt-DialogBox-ClosePanel .dialogTopRightInner {
+  width: 8px;
+  zoom: 1;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomRightInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+.gwt-DialogBox-ClosePanel .dialogTopLeft {
+  background: url(images/standard/corner.png) no-repeat -13px 0px;
+  -background: url(images/standard/corner_ie6.png) no-repeat -13px 0px;
+}
+.gwt-DialogBox-ClosePanel .dialogTopRight {
+  background: url(images/standard/corner.png) no-repeat -18px 0px;
+  -background: url(images/standard/corner_ie6.png) no-repeat -18px 0px;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomLeft {
+  background: url(images/standard/corner.png) no-repeat 0px -15px;
+  -background: url(images/standard/corner_ie6.png) no-repeat 0px -15px;
+}
+.gwt-DialogBox-ClosePanel .dialogBottomRight {
+  background: url(images/standard/corner.png) no-repeat -5px -15px;
+  -background: url(images/standard/corner_ie6.png) no-repeat -5px -15px;
+}
+* html .gwt-DialogBox-ClosePanel .dialogTopLeftInner {
+  width: 5px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox-ClosePanel .dialogTopRightInner {
+  width: 8px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox-ClosePanel .dialogBottomRightInner {
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+.gwt-ClosePanel-ForSell .Caption {
+  background: #CC0000;
+  padding: 4px 4px 4px 8px;
+  cursor: default;
+  border-bottom: 1px solid #bbbbbb;
+  border-top: 18px solid #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogContent {
+}
+.gwt-ClosePanel-ForSell .dialogMiddleCenter {
+  padding: 3px;
+  background: white;
+}
+.gwt-ClosePanel-ForSell .dialogBottomCenter {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogMiddleLeft {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogMiddleRight {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogTopLeftInner {
+  width: 5px;
+  zoom: 1;
+}
+.gwt-ClosePanel-ForSell .dialogTopRightInner {
+  width: 8px;
+  zoom: 1;
+}
+.gwt-ClosePanel-ForSell .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+.gwt-ClosePanel-ForSell .dialogBottomRightInner {
+  width: 5px;
+  height: 8px;
+  zoom: 1;
+}
+.gwt-ClosePanel-ForSell .dialogTopLeft {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogTopRight {
+ background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogBottomLeft {
+  background: #CC0000;
+}
+.gwt-ClosePanel-ForSell .dialogBottomRight {
+ background: #CC0000;
+}
+* html .gwt-ClosePanel-ForSell .dialogTopLeftInner {
+  width: 5px;
+  overflow: hidden;
+}
+* html .gwt-ClosePanel-ForSell .dialogTopRightInner {
+  width: 8px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox .dialogBottomLeftInner {
+  width: 5px;
+  height: 8px;
+  overflow: hidden;
+}
+* html .gwt-ClosePanel-ForSell .dialogBottomRightInner {
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+

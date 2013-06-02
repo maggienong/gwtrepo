@@ -1,0 +1,156 @@
+/*
+ * Copyright 2011 Google Inc.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+/*@def selectionBorderWidth 1px;*/
+.dataGridWidget {
+
+}
+
+.dataGridFirstColumn {
+  /*border-left: 1px solid #5781AE;*/
+}
+
+.dataGridLastColumn {
+    /*order-right: 1px solid #5781AE;*/
+}
+
+.dataGridFooter {
+  border-top: 2px solid #6f7277;
+  padding: 3px 15px;
+  text-align: left;
+  color: #4b4a4a;
+  text-shadow: #ddf 1px 1px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dataGridHeader {
+  /*gwt-image: 'cellTableHeaderBackground';*/
+  background-color: #b4d0f8; 
+  border-bottom: 1px solid #88b0f2;
+  /* Nagesh
+  border-left: 1px solid #88b0f2; */
+  
+  border-right: 1px solid #eef;
+  /*Nagesh */
+  padding: 2px; 
+  margin:0px;
+  
+  text-align: center;
+  color: #4b4a4a;
+  text-shadow: #ddf 1px 1px 0;
+  overflow: hidden;
+  height: 25px;
+}
+
+.dataGridCell {
+  padding: 2px;
+  margin:0px;
+  overflow: hidden;
+  border-right: 1px solid #95bce2;
+  border-bottom: 1px solid #95bce2;
+  white-space: nowrap;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 2.75mm;
+  cursor: pointer;
+  cursor: hand;
+  height: 13px;
+  text-align: left;
+}
+
+.dataGridFirstColumnFooter {
+   border-left: 0px;
+}
+
+.dataGridFirstColumnHeader {
+   /*border-left: 1px solid #5781AE;*/
+}
+
+.dataGridLastColumnFooter {
+  
+}
+
+.dataGridLastColumnHeader {
+   /*border-right: 1px solid #5781AE;*/
+}
+
+.dataGridSortableHeader {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.dataGridSortableHeader:hover {
+  color: #6c6b6b;
+}
+
+.dataGridSortedHeaderAscending {
+  
+}
+
+.dataGridSortedHeaderDescending {
+  
+}
+
+.dataGridEvenRow {
+  background: #ffffff;
+}
+
+.dataGridEvenRowCell {
+  border: selectionBorderWidth solid #ffffff;
+}
+
+.dataGridOddRow {
+  background: #f3f7fb;
+}
+
+.dataGridOddRowCell {
+  border: selectionBorderWidth solid #f3f7fb;
+}
+
+.dataGridHoveredRow {
+  background: #ffc;
+}
+
+.dataGridHoveredRowCell {
+  /*border: selectionBorderWidth solid #eee;*/
+}
+
+.dataGridKeyboardSelectedRow {
+  background: #ffc;
+}
+
+.dataGridKeyboardSelectedRowCell {
+  /*border: selectionBorderWidth solid #ffc;*/
+}
+
+.dataGridSelectedRow {
+  background: #92c1f0;
+  /*
+  color: white;
+  height: auto;
+  overflow: auto;
+  */
+}
+
+.dataGridSelectedRowCell {
+  /*border: selectionBorderWidth solid #628cd5;*/
+}
+
+/**
+ * The keyboard selected cell is visible over selection.
+ */
+.dataGridKeyboardSelectedCell {
+ /* border: selectionBorderWidth solid #d7dde8;*/
+}

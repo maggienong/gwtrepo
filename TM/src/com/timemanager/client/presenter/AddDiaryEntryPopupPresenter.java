@@ -9,17 +9,14 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.event.shared.HandlerManager;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.Label;
 import com.timemanager.client.TimeManagerService;
 import com.timemanager.client.TimeManagerServiceAsync;
 import com.timemanager.client.view.AddDiaryEntryPopup;
 import com.timemanager.client.view.AddDiaryEntryPopupView;
 import com.timemanager.shared.CategoryDTO;
 import com.timemanager.shared.DiaryEntryDTO;
-import com.timemanager.shared.DiaryEntryVw;
 import com.timemanager.shared.TaskDTO;
 import com.timemanager.shared.UserReference;
 

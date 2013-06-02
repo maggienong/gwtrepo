@@ -8,7 +8,7 @@ public interface  ResourceBundle  extends ClientBundle {
 
 	 public static final ResourceBundle INSTANCE = GWT.create(ResourceBundle.class);
 
-	 @Source("TimeAllocationManager.css")
+	 @Source("css/TimeAllocationManager.css")
 	 @CssResource.NotStrict
 	 public CssResource  stylesheet1();
 }

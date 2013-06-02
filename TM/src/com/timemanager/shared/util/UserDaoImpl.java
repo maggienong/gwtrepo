@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
+import com.timemanager.shared.TaskDTO;
 import com.timemanager.shared.UserDTO;
 
 public class UserDaoImpl implements UserDao{
@@ -18,9 +19,13 @@ public class UserDaoImpl implements UserDao{
 	
 	 
 	@Override
-	public void insert(UserDTO dto) {
+	public UserDTO insert(UserDTO dto) {
 		jdbcTemplate.update("insert into User(name,email,password) values(?,?,?)",
 		        new Object[] { dto.getName(), dto.getEmail(), dto.getPassword() });
+		UserDTO newdto = findByLogin(dto.getName(), dto.getPassword());
+		if(newdto!=null) return newdto;
+		return null;
+		
 	}
 	
 	@Override
@@ -53,4 +58,14 @@ public class UserDaoImpl implements UserDao{
 			return user;
 		}
 	}
+
+	@Override
+	public UserDTO findByLogin(String userName, String password) {
+		String sql = "select * from User where name = ? and password = ?";
+		 
+		UserDTO user = (UserDTO)jdbcTemplate.queryForObject( sql, new Object[] { userName, password }, new UserMapper());
+
+		return user;
+	}
+ 
 }
