@@ -19,6 +19,7 @@ public class DiaryEntryDTO implements Serializable {
 	private Timestamp end_time;
 
 
+
 	public long getCategory_id() {
 		return category_id;
 	}

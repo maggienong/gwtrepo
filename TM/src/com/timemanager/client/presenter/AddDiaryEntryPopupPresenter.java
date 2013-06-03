@@ -51,7 +51,7 @@ public class AddDiaryEntryPopupPresenter implements Presenter {
 				dto.setUser_id(ref.getUser().getId());
 				dto.setCategory_id(view.getCategoryList().getValue().getId());
 				dto.setTask_id(view.getTaskList().getValue().getId());
-				dto.setDuration(0.5);
+				dto.setDuration(view.getDuration());
 				dto.setStart_time(new Timestamp(System.currentTimeMillis()));
 				dto.setEnd_time(new Timestamp(System.currentTimeMillis()));
 				

@@ -19,14 +19,11 @@ public class MyCustomDateBoxFormat  implements Format {
 
 	@Override
 	public Date parse(DateBox dateBox, String text, boolean reportError) {
-		// TODO Auto-generated method stub
-		return null;
+		return f.parse(text);
 	}
 
 	@Override
-	public void reset(DateBox dateBox, boolean abandon) {
-		// TODO Auto-generated method stub
-		
+	public void reset(DateBox dateBox, boolean abandon) { 
 	}
 
  

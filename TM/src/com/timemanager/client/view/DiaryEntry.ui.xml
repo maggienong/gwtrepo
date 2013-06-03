@@ -80,6 +80,7 @@
     	  			    <td><d:DateBox ui:field="fromDate" addStyleNames="{style.datebox}"></d:DateBox></td> 
     	  			    <td><g:Label text="To: " /> </td>
     	  			    <td><d:DateBox ui:field="toDate" addStyleNames="{style.datebox}"></d:DateBox></td> 
+    	  			    <td><g:Button ui:field="retrieve">Retrieve</g:Button> </td>
     				</tr></table> 
     			</td></tr></table>
     			</g:HTMLPanel>

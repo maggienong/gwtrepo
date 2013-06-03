@@ -90,4 +90,7 @@ public class AddDiaryEntryPopup extends ClosablePanel implements AddDiaryEntryPo
 		return status;
 	} 
 
+	public double getDuration() {
+		return Double.parseDouble(duration.getText());
+	}
 }

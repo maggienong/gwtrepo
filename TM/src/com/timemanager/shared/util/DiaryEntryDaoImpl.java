@@ -38,7 +38,7 @@ public class DiaryEntryDaoImpl implements DiaryEntryDao{
 	public List<DiaryEntryVw> findAll(long user_id, Date fromDate, Date toDate) {
 		return jdbcTemplate.query( "select a.*,t.description as task,c.description as category, u.name as name " 
 				+ " from DiaryEntry a, Task t,Category c, User u where a.user_id = ? and a.user_id = u.id and a.task_id = t.id and a.category_id = c.id"
-				+ " and start_date>= ? and end_date<= ?"
+				+ " and update_date>= ? and update_date<= ADDDATE(?,1)"
 				, new Object[] { user_id, fromDate, toDate }, new DiaryEntryMapper()); 
 	}
 	
@@ -53,6 +53,7 @@ public class DiaryEntryDaoImpl implements DiaryEntryDao{
 			diaryEntry.setDuration(rs.getDouble("duration"));
 			diaryEntry.setStart_time(rs.getTimestamp("start_date"));
 			diaryEntry.setEnd_time(rs.getTimestamp("end_date"));
+			diaryEntry.setEntry_date(rs.getTimestamp("update_date"));
 			
 			vw.setDiaryEntry(diaryEntry);
 			vw.setUser_name(rs.getString("name"));

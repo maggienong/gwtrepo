@@ -15,4 +15,6 @@ public interface AddDiaryEntryPopupView extends BaseView {
 	public void hideWindow(); 
 	public void center();
 	public Label getStatus();
+
+	public double getDuration();
 }

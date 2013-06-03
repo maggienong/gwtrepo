@@ -50,4 +50,8 @@ public class DiaryEntryVw implements Serializable {
 		return diaryEntry.getId();
 	} 
 	
+	public Date getEntry_date() {
+		return diaryEntry.getEntry_date();
+	}
+	
 }

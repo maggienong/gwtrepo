@@ -12,5 +12,5 @@ public interface DiaryEntryView extends BaseView {
 	public Date getFromDate();
 	
 	public Date getToDate();
-	
+	public Button getRetrieve();
 }

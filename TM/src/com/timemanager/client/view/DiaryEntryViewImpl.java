@@ -19,6 +19,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.cellview.client.AbstractCellTableBuilder;
 import com.google.gwt.user.cellview.client.Column;
+import com.google.gwt.user.cellview.client.ColumnSortEvent;
 import com.google.gwt.user.cellview.client.ColumnSortEvent.ListHandler;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.SimplePager;
@@ -49,15 +50,28 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 	@UiField Button saveButton;
 	@UiField DateBox fromDate; 
 	@UiField DateBox toDate; 
+	@UiField Button retrieve;
 	
+	
+	public Button getRetrieve() {
+		return retrieve;
+	}
+
 	public Date getFromDate() {
-		return fromDate.getValue();
+		Date date = fromDate.getValue();
+		return getFormatedDate(date);
 	}
 	
 	public Date getToDate() {
-		return toDate.getValue();
+		Date date = toDate.getValue();
+		return getFormatedDate(date);
 	}
 	
+	private Date getFormatedDate(Date dt) {
+		DateTimeFormat f = DateTimeFormat.getFormat("yyyy/MM/dd");
+		String s = f.format(dt);
+		return f.parse(s);
+	}
 	public DiaryEntryViewImpl() {
 		ProvidesKey<DiaryEntryVw> KEY_PROVIDER = new ProvidesKey<DiaryEntryVw>() {
 			@Override
@@ -76,7 +90,7 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 		dataGrid.setEmptyTableWidget(new Label("No Data Yet"));
 
 		// Attach a column sort handler to the ListDataProvider to sort the list.
-
+		getDataProvider().addDataDisplay(dataGrid);
 		sortHandler = new ListHandler<DiaryEntryVw>(getDataProvider().getList()) ;
 		dataGrid.addColumnSortHandler(sortHandler);
 
@@ -97,10 +111,13 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
  
 		fromDate.setTitle("Choose from calendar");
 		fromDate.setWidth("100px");
+		fromDate.setValue(new Date());
 		fromDate.setFormat(new MyCustomDateBoxFormat());
+		
 		
 		toDate.setTitle("Choose from calendar");
 		toDate.setWidth("100px");
+		toDate.setValue(new Date());
 		toDate.setFormat(new MyCustomDateBoxFormat());
 		
 		//dataGrid.redraw();
@@ -111,19 +128,18 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 		return dataProvider;
 	}
 
-	public void setDataProvider(ListDataProvider<DiaryEntryVw> dataProvider) {
-		this.dataProvider = dataProvider;
-	}
-
 	
 	public Button getAddButton() {
 		return addButton;
 	}
 
 	public void addDataToProvider(List<DiaryEntryVw> listToWrap) {
-		dataProvider.setList(listToWrap );
-		dataProvider.addDataDisplay(dataGrid);
-		sortHandler.setList(dataProvider.getList());
+		if (listToWrap==null) return;
+		dataProvider.getList().clear();
+		for (DiaryEntryVw vw:listToWrap) {
+			dataProvider.getList().add(vw);
+		}
+		ColumnSortEvent.fire(dataGrid, dataGrid.getColumnSortList());
 	}
 	private void initTableColumns(final MultiSelectionModel<DiaryEntryVw> selectionModel,
 			ListHandler<DiaryEntryVw> sortHandler) {
@@ -194,43 +210,60 @@ public class DiaryEntryViewImpl extends Composite implements DiaryEntryView {
 		dataGrid.addColumn(durationColumn, "Duration");
 		dataGrid.setColumnWidth(durationColumn, 15, Unit.PCT);
 
-		final DateTimeFormat f = DateTimeFormat.getFormat("yyyy/MM/dd HH:mm:ss");
+		final DateTimeFormat f = DateTimeFormat.getFormat("yyyy/MM/dd");
 
-		// Start Time
-		Column<DiaryEntryVw, String> stTimeColumn =
+		Column<DiaryEntryVw, String> entryTime =
 				new Column<DiaryEntryVw, String>(new TextCell()) {
 			@Override
 			public String getValue(DiaryEntryVw object) {
-				return f.format(object.getStart_time());
+				return f.format(object.getEntry_date());
 			}
 		};
-		stTimeColumn.setSortable(true);
-		sortHandler.setComparator(stTimeColumn, new Comparator<DiaryEntryVw>() {
+		entryTime.setSortable(true);
+		sortHandler.setComparator(entryTime, new Comparator<DiaryEntryVw>() {
 			@Override
 			public int compare(DiaryEntryVw o1, DiaryEntryVw o2) {
-				return (o1.getStart_time().compareTo((o2.getStart_time())));
+				return (o1.getEntry_date().compareTo((o2.getEntry_date())));
 			}
 		});
-		dataGrid.addColumn(stTimeColumn, "Start Time");
-		dataGrid.setColumnWidth(stTimeColumn, 25, Unit.PCT);
+		dataGrid.addColumn(entryTime, "Entered");
+		dataGrid.setColumnWidth(entryTime, 25, Unit.PCT);
+		
+		// Start Time
+//		Column<DiaryEntryVw, String> stTimeColumn =
+//				new Column<DiaryEntryVw, String>(new TextCell()) {
+//			@Override
+//			public String getValue(DiaryEntryVw object) {
+//				return f.format(object.getStart_time());
+//			}
+//		};
+//		stTimeColumn.setSortable(true);
+//		sortHandler.setComparator(stTimeColumn, new Comparator<DiaryEntryVw>() {
+//			@Override
+//			public int compare(DiaryEntryVw o1, DiaryEntryVw o2) {
+//				return (o1.getStart_time().compareTo((o2.getStart_time())));
+//			}
+//		});
+//		dataGrid.addColumn(stTimeColumn, "Start Time");
+//		dataGrid.setColumnWidth(stTimeColumn, 25, Unit.PCT);
 
 		// End Time
-		Column<DiaryEntryVw, String> endTimeColumn =
-				new Column<DiaryEntryVw, String>(new TextCell()) {
-			@Override
-			public String getValue(DiaryEntryVw object) {
-				return f.format(object.getEnd_time());
-			}
-		};
-		endTimeColumn.setSortable(true);
-		sortHandler.setComparator(endTimeColumn, new Comparator<DiaryEntryVw>() {
-			@Override
-			public int compare(DiaryEntryVw o1, DiaryEntryVw o2) {
-				return (o1.getEnd_time().compareTo((o2.getEnd_time())));
-			}
-		});
-		dataGrid.addColumn(endTimeColumn, "End Time");
-		dataGrid.setColumnWidth(endTimeColumn, 25, Unit.PCT);
+//		Column<DiaryEntryVw, String> endTimeColumn =
+//				new Column<DiaryEntryVw, String>(new TextCell()) {
+//			@Override
+//			public String getValue(DiaryEntryVw object) {
+//				return f.format(object.getEnd_time());
+//			}
+//		};
+//		endTimeColumn.setSortable(true);
+//		sortHandler.setComparator(endTimeColumn, new Comparator<DiaryEntryVw>() {
+//			@Override
+//			public int compare(DiaryEntryVw o1, DiaryEntryVw o2) {
+//				return (o1.getEnd_time().compareTo((o2.getEnd_time())));
+//			}
+//		});
+//		dataGrid.addColumn(endTimeColumn, "End Time");
+//		dataGrid.setColumnWidth(endTimeColumn, 25, Unit.PCT);
 	}
 
 	private class CustomTableBuilder extends AbstractCellTableBuilder<DiaryEntryVw> {

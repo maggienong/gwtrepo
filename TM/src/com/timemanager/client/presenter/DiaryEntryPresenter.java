@@ -81,7 +81,13 @@ public class DiaryEntryPresenter implements Presenter {
 			}
 		});
 
-
+		view.getRetrieve().addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				getData();
+			}
+		});
 	}
 
 	@Override
